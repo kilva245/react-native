@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 
 export default function Home() {
     return (
       <View style={styles.container}>
         <Text>home</Text>
-        <StatusBar style="auto" />
       </View>
     );
   }

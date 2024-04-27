@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 
 export default function Backups() {
     return (
       <View style={styles.container}>
         <Text>backups</Text>
-        <StatusBar style="auto" />
       </View>
     );
   }

@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 
 export default function Timer() {
     return (
       <View style={styles.container}>
         <Text>Timer</Text>
-        <StatusBar style="auto" />
       </View>
     );
   }
