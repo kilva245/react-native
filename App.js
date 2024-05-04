@@ -1,14 +1,16 @@
 import "react-native-gesture-handler";
-import { View, Text, I18nManager } from 'react-native'
+import { View, Text, I18nManager, StatusBar, TouchableOpacity } from 'react-native'
 import {
   SimpleLineIcons,
   MaterialIcons,
   MaterialCommunityIcons,
-  FontAwesome
+  FontAwesome,
+  AntDesign
 } from "@expo/vector-icons"
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { DrawerItemList, createDrawerNavigator } from "@react-navigation/drawer";
+import { useNavigation } from '@react-navigation/native';
 import Backups from "./screens/Backups";
 import Home from "./screens/Home";
 import Categories from "./screens/Categories";
@@ -32,29 +34,75 @@ if (I18nManager.isRTL) {
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
+      <StatusBar barStyle="light-content" backgroundColor="#5755FE" />
       <Drawer.Navigator
         drawerContent={
           (props) => {
+            const navigation = useNavigation();
             return (
               <SafeAreaView>
-                <View
-                  style={{ height: 200, }}
-                >
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                  <TouchableOpacity onPress={() => navigation.navigate('home')}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
+                        <SimpleLineIcons name="home" size={20} color="#fff" />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                      </View>
+                      <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
+                    </View>
+                  </TouchableOpacity>
+                </View>
 
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                  <TouchableOpacity onPress={() => navigation.navigate('home')}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
+                        <SimpleLineIcons name="home" size={20} color="#fff" />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                      </View>
+                      <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                  <TouchableOpacity onPress={() => navigation.navigate('home')}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
+                        <SimpleLineIcons name="home" size={20} color="#fff" />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                      </View>
+                      <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                  <TouchableOpacity onPress={() => navigation.navigate('home')}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
+                        <SimpleLineIcons name="home" size={20} color="#fff" />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                      </View>
+                      <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
+                    </View>
+                  </TouchableOpacity>
                 </View>
                 <DrawerItemList {...props} />
               </SafeAreaView>
             )
           }
         }
+
+
         screenOptions={{
           drawerStyle: {
             backgroundColor: "#fff",
             width: 250,
           },
           headerStyle: {
-            backgroundColor: '#f4511e'
+            backgroundColor: '#5755FE',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -71,10 +119,11 @@ export default function App() {
           name="home"
           options={{
             drawerLabel: "Home",
-            title: "Home",
+            title: "sahibinden.com",
             drawerIcon: () => (
               <SimpleLineIcons name="home" size={20} color="#808080" />
             ),
+
           }}
           component={Home}
         />
