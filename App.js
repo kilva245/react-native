@@ -5,7 +5,10 @@ import {
   MaterialIcons,
   MaterialCommunityIcons,
   FontAwesome,
-  AntDesign
+  AntDesign,
+  FontAwesome6,
+  Entypo,
+  FontAwesome5
 } from "@expo/vector-icons"
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
@@ -20,6 +23,7 @@ import Settings from "./screens/Settings";
 import Timer from "./screens/Timer";
 import GetPremium from "./screens/GetPremium";
 import Customize from "./screens/Customize";
+
 
 const Drawer = createDrawerNavigator()
 
@@ -42,48 +46,48 @@ export default function App() {
             const navigation = useNavigation();
             return (
               <SafeAreaView>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between',paddingTop: 20, padding: 17, backgroundColor: '#5755FE' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
                         <SimpleLineIcons name="home" size={20} color="#fff" />
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                        <Text style={{ fontSize: 14, marginTop: 3, marginLeft: 30, color: 'white' }}>Anasayfa</Text>
                       </View>
                       <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
                     </View>
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#5755FE' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
-                        <SimpleLineIcons name="home" size={20} color="#fff" />
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                        <FontAwesome6 name="person" size={30} color="#fff" />
+                        <Text style={{ fontSize: 14, marginTop: 3, marginLeft: 30, color: 'white' }}>Bana Ozel</Text>
                       </View>
                       <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
                     </View>
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 7, paddingRight: 20, backgroundColor: '#5755FE' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
-                        <SimpleLineIcons name="home" size={20} color="#fff" />
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                        <Entypo name="plus" size={40} color="#fff" />
+                        <Text style={{ fontSize: 14, marginTop: 3, marginLeft: 20, color: 'white' }}>ilan var</Text>
                       </View>
                       <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
                     </View>
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#5755FE' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
-                        <SimpleLineIcons name="home" size={20} color="#fff" />
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 3, marginLeft: 20, color: 'white' }}>Home Screen</Text>
+                        <FontAwesome6 name="rotate" size={24} color="#fff" />
+                        <Text style={{ fontSize: 14, marginTop: 3, marginLeft: 25, color: 'white' }}>Servisler</Text>
                       </View>
                       <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
                     </View>
@@ -99,7 +103,8 @@ export default function App() {
         screenOptions={{
           drawerStyle: {
             backgroundColor: "#fff",
-            width: 250,
+            width: 350,
+            
           },
           headerStyle: {
             backgroundColor: '#5755FE',
@@ -109,8 +114,13 @@ export default function App() {
             fontWeight: "bold"
           },
           drawerActiveTintColor: "blue",
+          drawerItemStyle:{
+            marginBottom: 5,
+            borderBottomWidth: 1,
+            borderBottomColor: '#ccc'
+          },
           drawerLabelStyle: {
-            color: "#111"
+            color: "#111",
           }
         }}
       >
@@ -118,11 +128,12 @@ export default function App() {
         <Drawer.Screen
           name="home"
           options={{
-            drawerLabel: "Home",
+            drawerLabel: "Emlak",
             title: "sahibinden.com",
             drawerIcon: () => (
-              <SimpleLineIcons name="home" size={20} color="#808080" />
+              <FontAwesome5 name="home" size={20} color="#808080"  />
             ),
+            description: "Buy and sell properties with ease",
 
           }}
           component={Home}
@@ -132,6 +143,7 @@ export default function App() {
           options={{
             drawerLabel: "Timer",
             title: "Timer",
+            
             drawerIcon: () => (
               <MaterialIcons name="timer" size={20} color="#808080" />
             ),
