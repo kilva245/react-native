@@ -39,14 +39,14 @@ if (I18nManager.isRTL) {
 export default function App() {
   return (
     <NavigationContainer >
-      <StatusBar barStyle="light-content" backgroundColor="#5755FE" />
+      <StatusBar barStyle="light-content" backgroundColor="#40679E" />
       <Drawer.Navigator
         drawerContent={
           (props) => {
             const navigation = useNavigation();
             return (
               <SafeAreaView>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between',paddingTop: 20, padding: 17, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between',paddingTop: 20, padding: 17, backgroundColor: '#40679E' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
@@ -58,7 +58,7 @@ export default function App() {
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#40679E' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
@@ -70,7 +70,7 @@ export default function App() {
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 7, paddingRight: 20, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 7, paddingRight: 20, backgroundColor: '#40679E' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
@@ -82,7 +82,7 @@ export default function App() {
                   </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#5755FE' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#40679E' }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
@@ -107,7 +107,7 @@ export default function App() {
             
           },
           headerStyle: {
-            backgroundColor: '#5755FE',
+            backgroundColor: '#40679E',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -198,7 +198,7 @@ export default function App() {
           component={Backups}
         />
         <Drawer.Screen
-          name="Get Premium"
+          name="GetPremium"
           options={{
             drawerLabel: "Get Premium",
             title: "Get Premium",
