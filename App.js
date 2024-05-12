@@ -8,7 +8,8 @@ import {
   AntDesign,
   FontAwesome6,
   Entypo,
-  FontAwesome5
+  FontAwesome5,
+  Ionicons
 } from "@expo/vector-icons"
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
@@ -16,13 +17,15 @@ import { DrawerItemList, createDrawerNavigator } from "@react-navigation/drawer"
 import { useNavigation } from '@react-navigation/native';
 import Backups from "./screens/Backups";
 import Home from "./screens/Home";
-import Categories from "./screens/Categories";
+import Yedek from "./screens/Yedek";
 import RateApp from "./screens/RateApp";
 import Contact from "./screens/Contact";
 import Settings from "./screens/Settings";
-import Timer from "./screens/Timer";
+import Vasita from "./screens/Vasita";
 import GetPremium from "./screens/GetPremium";
 import Customize from "./screens/Customize";
+import Emlak from "./screens/inner/Emlak";
+import Hayvanlar from "./screens/Hayvanlar";
 
 
 const Drawer = createDrawerNavigator()
@@ -45,20 +48,10 @@ export default function App() {
           (props) => {
             const navigation = useNavigation();
             return (
-              <SafeAreaView>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between',paddingTop: 20, padding: 17, backgroundColor: '#40679E' }}>
-                  <TouchableOpacity onPress={() => navigation.navigate('home')}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
-                        <SimpleLineIcons name="home" size={20} color="#fff" />
-                        <Text style={{ fontSize: 14, marginTop: 3, marginLeft: 30, color: 'white' }}>Anasayfa</Text>
-                      </View>
-                      <AntDesign name="right" size={20} color="#fff" fontWeight="bold" />
-                    </View>
-                  </TouchableOpacity>
-                </View>
+              <SafeAreaView style={{backgroundColor: '#40679E', height: '20%'}}>
+               
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17, backgroundColor: '#40679E' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 17,  }}>
                   <TouchableOpacity onPress={() => navigation.navigate('home')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                       <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' , alignItems: 'center'}}>
@@ -109,13 +102,14 @@ export default function App() {
           headerStyle: {
             backgroundColor: '#40679E',
           },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: "bold"
+          headerTitleStyle:{
+            fontWeight: '100'
           },
-          drawerActiveTintColor: "blue",
+          headerTintColor: '#fff',
+          drawerActiveTintColor: "black",
           drawerItemStyle:{
-            marginBottom: 5,
+            marginBottom: -5,
+            marginLeft: 0,
             borderBottomWidth: 1,
             borderBottomColor: '#ccc'
           },
@@ -124,11 +118,10 @@ export default function App() {
           }
         }}
       >
-
         <Drawer.Screen
           name="home"
           options={{
-            drawerLabel: "Emlak",
+            drawerLabel: "anasayfa",
             title: "sahibinden.com",
             drawerIcon: () => (
               <FontAwesome5 name="home" size={20} color="#808080"  />
@@ -139,37 +132,82 @@ export default function App() {
           component={Home}
         />
         <Drawer.Screen
-          name="timer"
+          name="Emlak"
           options={{
-            drawerLabel: "Timer",
-            title: "Timer",
+            drawerLabel: "Emlak",
+            drawerLabelStyle:{position: 'relative', left: -20},
+            title: "Kategori seçimi",
+            drawerIcon: () => (
+              <FontAwesome name="home" size={24} color="#fff" backgroundColor='#DD761C'
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
+            ),
+            description: "Buy and sell properties with ease",
+
+          }}
+          component={Emlak}
+        />
+        <Drawer.Screen
+          name="Vasita"
+          options={{
+            drawerLabel: "Vasita",
+            drawerLabelStyle:{position: 'relative', left: -20},
+            title: "Kategori seçimi",
             
             drawerIcon: () => (
-              <MaterialIcons name="timer" size={20} color="#808080" />
+              <MaterialCommunityIcons name="steering" size={24} color="#fff" backgroundColor="red"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
-          component={Timer}
+          component={Vasita}
         />
 
         <Drawer.Screen
-          name="Categories"
+          name="Yedek"
           options={{
-            drawerLabel: "Categories",
-            title: "Categories",
+            drawerLabel: "Yedek Parca, Aksesuar, Donanim & Tuning",
+            drawerLabelStyle:{position: 'relative', left: -20},
+            title: "Kategori seçimi",
             drawerIcon: () => (
-              <MaterialIcons name="category" size={20} color="#808080" />
+              <MaterialCommunityIcons name="tools" size={24} color="#fff" backgroundColor="#5DEBD7"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
-          component={Categories}
+          component={Yedek}
         />
 
         <Drawer.Screen
           name="customize"
           options={{
             drawerLabel: "customize",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "customize",
             drawerIcon: () => (
-              <MaterialIcons name="dashboard-customize" size={20} color="#808080" />
+              <FontAwesome name="shopping-cart" size={24} color="#fff" backgroundColor="#576CBC"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
           component={Customize}
@@ -179,9 +217,17 @@ export default function App() {
           name="settings"
           options={{
             drawerLabel: "settings",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "settings",
             drawerIcon: () => (
-              <MaterialIcons name="settings" size={20} color="#808080" />
+              <MaterialCommunityIcons name="tractor" size={24} color="#fff" backgroundColor="#B931FC"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
           component={Settings}
@@ -190,9 +236,17 @@ export default function App() {
           name="backups"
           options={{
             drawerLabel: "backups",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "backups",
             drawerIcon: () => (
-              <MaterialIcons name="backup" size={20} color="#808080" />
+              <MaterialCommunityIcons name="brush-variant" size={24} color="#fff" backgroundColor="#03AED2"
+              style={{
+                padding: 6,
+                borderBottomLeftRadius: 20,
+                borderTopLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                borderTopRightRadius: 20
+              }} />
             ),
           }}
           component={Backups}
@@ -201,9 +255,17 @@ export default function App() {
           name="GetPremium"
           options={{
             drawerLabel: "Get Premium",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "Get Premium",
             drawerIcon: () => (
-              <MaterialCommunityIcons name="certificate" size={20} color="#808080" />
+              <MaterialCommunityIcons name="book-open-variant" size={24} color="#fff" backgroundColor="#41B06E"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
           component={GetPremium}
@@ -213,9 +275,17 @@ export default function App() {
           name="Rate this App"
           options={{
             drawerLabel: "Rate this App",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "Rate this App",
             drawerIcon: () => (
-              <FontAwesome name="star" size={20} color="#808080" />
+              <Ionicons name="person" size={24} color="#fff" backgroundColor="#41B06E"
+              style={{
+                padding: 6,
+                borderBottomLeftRadius: 20,
+                borderTopLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                borderTopRightRadius: 20
+              }} />
             ),
           }}
           component={RateApp}
@@ -224,12 +294,39 @@ export default function App() {
           name="contact"
           options={{
             drawerLabel: "contact",
+            drawerLabelStyle:{position: 'relative', left: -20},
             title: "contact",
             drawerIcon: () => (
-              <MaterialCommunityIcons name="message-alert-outline" size={20} color="#808080" />
+              <MaterialCommunityIcons name="baby-carriage" size={24} color="#fff" backgroundColor="#FFAF61"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
             ),
           }}
           component={Contact}
+        />
+        <Drawer.Screen
+          name="hayvalar"
+          options={{
+            drawerLabel: "Hayvanlar Alemi",
+            drawerLabelStyle:{position: 'relative', left: -20},
+            title: "contact",
+            drawerIcon: () => (
+              <FontAwesome name="paw" size={24} color="#fff" backgroundColor="#03AED2"
+                style={{
+                  padding: 6,
+                  borderBottomLeftRadius: 20,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 20,
+                  borderTopRightRadius: 20
+                }} />
+            ),
+          }}
+          component={Hayvanlar}
         />
 
 

@@ -40,18 +40,20 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
             placeholder="Kelime veya ilan No. ile ara"
             onChangeText={handleSearchChange}
             value={searchQuery}
+            placeholderTextColor='#bbb'
             inputStyle={{ backgroundColor: '#FFFFFF' }}
-            containerStyle={{ backgroundColor: '#FFFFFF', borderWidth: 1, borderColor: '#888' }}
+            containerStyle={{ backgroundColor: '#FFFFFF', borderWidth: 1, borderColor: '#eee', borderBottomRightRadius: 30, borderBottomLeftRadius: 30, borderTopLeftRadius: 30, borderTopRightRadius: 30 }}
             inputContainerStyle={{ backgroundColor: '#FFFFFF', height: 40 }}
-            searchIcon={{ size: 30 }}
+            searchIcon={{ size: 30, color: '#999' }}
+            rightIconContainerStyle={{ paddingRight: 70 }}
           />
           <View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', position: 'absolute', right: 20, top: -40 }}>
               <TouchableOpacity onPress={handlePressMicrophone} style={{ marginRight: 20 }}>
-                <FontAwesome name="microphone" size={24} color="#888" />
+                <FontAwesome name="microphone" size={20} color="#999" />
               </TouchableOpacity>
               <TouchableOpacity onPress={handlePressBarcode}>
-                <MaterialCommunityIcons name="barcode-scan" size={24} color="#888" />
+                <MaterialCommunityIcons name="barcode-scan" size={20} color="#999" />
               </TouchableOpacity>
             </View>
           </View>
@@ -59,7 +61,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
       </View>
       <View style={{ marginTop: 20, backgroundColor: '#fff' }}>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('home')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Emlak')}>
             <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, borderBottomWidth: 1, borderColor: '#eee' }}>
               <FontAwesome name="home" size={24} color="#fff" backgroundColor='#DD761C'
                 style={{
@@ -70,9 +72,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderTopRightRadius: 20
                 }} />
 
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Emlak</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>konut, is, yeri, Arsa, Konut Projeleri, Bina, Devre Mulk,Turis...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>konut, is, yeri, Arsa, Konut Projeleri, Bina, Devre Mulk,Turis...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -89,9 +91,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Vasita</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Otomobil, Arazi, SUV & Pickup, Motosiklet, MInivan & Pan...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Otomobil, Arazi, SUV & Pickup, Motosiklet, MInivan & Pan...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -109,9 +111,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Yedek Parca, Aksesuar, Donanim & Turing</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Otomotiv Ekipmanlari, Motosiklet Ekipmanlari, Deniz Araci...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Otomotiv Ekipmanlari, Motosiklet Ekipmanlari, Deniz Araci...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -129,9 +131,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>ikinci El ve Sifir Alisveris</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Bilgisayar, Cep Telefonu, Fotograf & ka...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Bilgisayar, Cep Telefonu, Fotograf & ka...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -149,9 +151,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>is Makineleri & Sanayi</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>is makineleri, Sanayi, Elektrik & Enerji</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>is makineleri, Sanayi, Elektrik & Enerji</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -169,9 +171,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Ustalar ve Hizmetler</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Ev Tadilat & Dekorasyon, Nakiliye, Arac Servis & Bakim, Ta...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Ev Tadilat & Dekorasyon, Nakiliye, Arac Servis & Bakim, Ta...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -189,9 +191,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Ozel Ders Verenler</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Lise & Universite, ilkokul & Ortaokul, Yabanci Dil, Bilgisayar...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Lise & Universite, ilkokul & Ortaokul, Yabanci Dil, Bilgisayar...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -209,9 +211,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>is ilanlari</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Avukatlik & Hukuki Danismanlik, Egitim, Eglence & Aktivite...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Avukatlik & Hukuki Danismanlik, Egitim, Eglence & Aktivite...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -229,9 +231,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Yardimci Arayanlar</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>ebek & cucuk Bakicisi, Yasli & Hasta Bakicisi, Temizlikci...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>ebek & cucuk Bakicisi, Yasli & Hasta Bakicisi, Temizlikci...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -249,9 +251,9 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20
                 }} />
-              <View style={{ marginLeft: 16 }}>
+              <View style={{ marginLeft: 10 }}>
                 <Text style={{ fontSize: 16 }}>Hayvanlar Alemi</Text>
-                <Text style={{ fontSize: 13, color: '#999' }}>Evci Hayvanlar, Akvaryum Baliklari, Aksesuarlar, Bakim Ur...</Text>
+                <Text style={{ fontSize: 12, color: '#999' }}>Evci Hayvanlar, Akvaryum Baliklari, Aksesuarlar, Bakim Ur...</Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <MaterialIcons name="arrow-forward-ios" size={17} color="#888" />
@@ -272,7 +274,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                 borderBottomRightRadius: 20,
                 borderTopRightRadius: 20
               }} />
-            <View style={{ marginLeft: 16 }}>
+            <View style={{ marginLeft: 10 }}>
               <Text style={{ fontSize: 16 }}>Acil Acil</Text>
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
@@ -291,7 +293,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                 borderBottomRightRadius: 20,
                 borderTopRightRadius: 20
               }} />
-            <View style={{ marginLeft: 16 }}>
+            <View style={{ marginLeft: 10 }}>
               <Text style={{ fontSize: 16 }}>Son 48 Saat</Text>
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
@@ -325,7 +327,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
                 width: 80,
                 height: 80,
               }}>
-                <Image source={require("../icons/google.png")}
+                <Image source={require("../icons/microsoft.png")}
                   style={{
                     padding: 6,
                     borderBottomLeftRadius: 100,
@@ -375,112 +377,112 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
         </View>
       </View>
 
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginTop: 20, width: '100%' }}>
         <Text style={{ color: '#888', position: 'relative', left: 20, marginBottom: 8 }}>SON ARAMANIZA UYGUN ILANLAR</Text>
-        <View style={{backgroundColor: '#fff' , paddingTop: 10, paddingBottom: 10}}>
+        <View style={{ backgroundColor: '#fff', paddingTop: 10, paddingBottom: 10, width: '100%' }}>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10,paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10, paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
               <View style={{
-                width: 110,
-                height: 90,
                 borderTopWidth: 1,
                 borderBottomWidth: 1,
                 borderRightWidth: 1,
-                borderLeftWidth:1,
+                borderLeftWidth: 1,
                 borderColor: '#888',
               }}>
-                <Image source={require("../icons/google.png")}
+                <Image source={require("../icons/home1.jpg")}
                   style={{
                     padding: 6,
                     objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
+                    width: 110,
+                    height: 90,
                   }}
 
                 />
               </View>
-              <View style={{ marginLeft: 6 }}>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -10 }}>Daire Fiyatina Bahceli Ev ilce Merkezinde</Text>
-                <View style={{position: 'relative', top: 26, display: 'flex', flexDirection: 'row'}}>
-                  <FontAwesome6 name='location-dot' size={15} color='#888' />
-                  <Text style={{marginLeft: 5, color: '#888'}}>Balikesir, Gonen</Text>
-                  <Text style={{color: '#1679AB', fontSize: 16, position: 'absolute', right: -40}}>2,050,000 TL</Text>
+              <View style={{ marginLeft: 6, width: '100%' }}>
+                <Text style={{ fontSize: 12, color: '#101010', position: 'relative', top: -10 }}>Daire Fiyatina Bahceli Ev ilce Merkezinde</Text>
+                <View style={{ position: 'relative', top: 18, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '70%' }}>
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <FontAwesome6 name='location-dot' size={15} color='#888' />
+                    <Text style={{ marginLeft: 5, color: '#888' }}>Balikesir, Gonen</Text>
+                  </View>
+                  <Text style={{ color: '#1679AB', fontSize: 16, position: 'absolute', right: 0 }}>2,050,000 TL</Text>
                 </View>
               </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10,paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10, paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
               <View style={{
-                width: 110,
-                height: 90,
                 borderTopWidth: 1,
                 borderBottomWidth: 1,
                 borderRightWidth: 1,
-                borderLeftWidth:1,
+                borderLeftWidth: 1,
                 borderColor: '#888',
               }}>
-                <Image source={require("../icons/google.png")}
+                <Image source={require("../icons/home2.jpeg")}
                   style={{
                     padding: 6,
                     objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
+                    width: 110,
+                    height: 90,
                   }}
 
                 />
               </View>
-              <View style={{ marginLeft: 6 }}>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -15 }}>ISTANBUL / SILIVRI - 850 M2 -ASFALT CEPHELI</Text>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -15 }}>-BEKIRLI MAHALLESI</Text>
-                <View style={{position: 'relative', top: 20, display: 'flex', flexDirection: 'row'}}>
-                  <FontAwesome6 name='location-dot' size={15} color='#888' />
-                  <Text style={{marginLeft: 5, color: '#888'}}>istanbul, silivri</Text>
-                  <Text style={{color: '#1679AB', fontSize: 16, position: 'absolute', right: -5}}>3,300,000 TL</Text>
+              <View style={{ marginLeft: 6, width: '100%' }}>
+                <Text style={{ fontSize: 13, color: '#101010', position: 'relative', top: -15 }}>ISTANBUL / SILIVRI - 850 M2 -ASFALT CEPHELI</Text>
+                <Text style={{ fontSize: 13, color: '#101010', position: 'relative', top: -15 }}>-BEKIRLI MAHALLESI</Text>
+                <View style={{ position: 'relative', top: 18, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '70%' }}>
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <FontAwesome6 name='location-dot' size={15} color='#888' />
+                    <Text style={{ marginLeft: 5, color: '#888' }}>istanbul, silivri</Text>
+                  </View>
+                  <Text style={{ color: '#1679AB', fontSize: 16, position: 'absolute', right: 0 }}>3,300,000 TL</Text>
                 </View>
               </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10,paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10, paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
               <View style={{
-                width: 110,
-                height: 90,
                 borderTopWidth: 1,
                 borderBottomWidth: 1,
                 borderRightWidth: 1,
-                borderLeftWidth:1,
+                borderLeftWidth: 1,
                 borderColor: '#888',
               }}>
-                <Image source={require("../icons/google.png")}
+                <Image source={require("../icons/home3.jpg")}
                   style={{
                     padding: 6,
                     objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
+                    width: 110,
+                    height: 90,
                   }}
 
                 />
               </View>
-              <View style={{ marginLeft: 6 }}>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -10 }}>Daire Fiyatina Bahceli Ev ilce Merkezinde</Text>
-                <View style={{backgroundColor: '#eee', width: '36%', position: 'relative', top: 20, left: 2}}>
-                    <Text style={{position: 'relative', left: 7, fontSize: 12, color: '#555'}}>
-                      Premium Ofis
-                    </Text>
+              <View style={{ marginLeft: 6, width: '100%' }}>
+                <Text style={{ fontSize: 13, color: '#101010', position: 'relative', top: -10 }}>Daire Fiyatina Bahceli Ev ilce Merkezinde</Text>
+                <View style={{ position: 'relative', top: 10, width: 100 }}>
+                  <Text style={{ backgroundColor: '#eee', position: 'relative', fontSize: 12, color: '#555', paddingLeft: 15 }}>
+                    Premium Ofis
+                  </Text>
                 </View>
-                <View style={{position: 'relative', top: 26, display: 'flex', flexDirection: 'row'}}>
-                  <FontAwesome6 name='location-dot' size={15} color='#888' />
-                  <Text style={{marginLeft: 5, color: '#888'}}>Tekirdag, Saray</Text>
-                  <Text style={{color: '#1679AB', fontSize: 16, position: 'absolute', right: -40}}>5,750,000 TL</Text>
+                <View style={{ position: 'relative', top: 26, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '70%' }}>
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <FontAwesome6 name='location-dot' size={15} color='#888' />
+                    <Text style={{ marginLeft: 5, color: '#888' }}>Tekirdag, Saray</Text>
+                  </View>
+                  <Text style={{ color: '#1679AB', fontSize: 16, position: 'absolute', right: 0 }}>5,750,000 TL</Text>
                 </View>
               </View>
-              
+
             </View>
-            
+
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center',padding: 20 ,paddingTop: 17, paddingBottom: 10 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 17, paddingBottom: 10 }}>
               <View>
                 <Text style={{ fontSize: 14, color: '#1679AB' }}>Tumunu Goster</Text>
               </View>
@@ -492,50 +494,50 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
         </View>
       </View>
 
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginTop: 20, width: '100%' }}>
         <Text style={{ color: '#888', position: 'relative', left: 20, marginBottom: 8 }}>SON GEZDIGINIZ ILANLAR</Text>
-        <View style={{backgroundColor: '#fff' , paddingTop: 10, paddingBottom: 10}}>
+        <View style={{ backgroundColor: '#fff', paddingTop: 10, paddingBottom: 10, width: '100%' }}>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
             <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10, paddingLeft: 6, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#eee' }}>
               <View style={{
-                width: 110,
-                height: 90,
                 borderTopWidth: 1,
                 borderBottomWidth: 1,
                 borderRightWidth: 1,
-                borderLeftWidth:1,
+                borderLeftWidth: 1,
                 borderColor: '#888',
               }}>
-                <Image source={require("../icons/google.png")}
+                <Image source={require("../icons/car1.webp")}
                   style={{
                     padding: 6,
                     objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
+                    width: 110,
+                    height: 90,
                   }}
 
                 />
               </View>
-              <View style={{ marginLeft: 6 }}>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -10 }}>R&R SPORT 2.0SD4 HSE PLUS BORUSAN</Text>
-                <Text style={{ fontSize: 14, color: '#101010', position: 'relative', top: -10 }}>CIKISLI BORUSAN FUL BAKIMLI</Text>
-               <View style={{backgroundColor: '#eee', width: '36%', position: 'relative', top: 10, left: 2}}>
-                    <Text style={{position: 'relative', left: 7, fontSize: 12, color: '#555'}}>
-                      Premium Ofis
-                    </Text>
+              <View style={{ marginLeft: 6, width: '100%' }}>
+                <Text style={{ fontSize: 13, color: '#101010', position: 'relative', top: -10 }}>R&R SPORT 2.0SD4 HSE PLUS BORUSAN</Text>
+                <Text style={{ fontSize: 13, color: '#101010', position: 'relative', top: -10 }}>CIKISLI BORUSAN FUL BAKIMLI</Text>
+                <View style={{ position: 'relative', top: 10, width: 100 }}>
+                  <Text style={{ backgroundColor: '#eee', position: 'relative', fontSize: 12, color: '#555', paddingLeft: 15 }}>
+                    Premium Ofis
+                  </Text>
                 </View>
-                <View style={{position: 'relative', top: 18, display: 'flex', flexDirection: 'row'}}>
-                  <FontAwesome6 name='location-dot' size={15} color='#888' />
-                  <Text style={{marginLeft: 5, color: '#888'}}>Tekirdag, Saray</Text>
-                  <Text style={{color: '#1679AB', fontSize: 16, position: 'absolute', right: -40}}>3,850,000 TL</Text>
+                <View style={{ position: 'relative', top: 18, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '70%' }}>
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <FontAwesome6 name='location-dot' size={15} color='#888' />
+                    <Text style={{ marginLeft: 5, color: '#888' }}>Tekirdag, Saray</Text>
+                  </View>
+                  <Text style={{ color: '#1679AB', fontSize: 16, position: "absolute", right: 0 }}>3,850,000 TL</Text>
                 </View>
               </View>
-              
+
             </View>
-            
+
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center',padding: 20 ,paddingTop: 17, paddingBottom: 10 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 17, paddingBottom: 10 }}>
               <View>
                 <Text style={{ fontSize: 14, color: '#1679AB' }}>Tumunu Goster</Text>
               </View>
