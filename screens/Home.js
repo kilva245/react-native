@@ -163,7 +163,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Yedek')}>
               <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 5, borderBottomWidth: 1, borderColor: '#eee' }}>
                 <MaterialCommunityIcons name="tools" size={24} color="#fff" backgroundColor="#5DEBD7"
                   style={{
@@ -183,7 +183,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Alisverish')}>
               <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 5, borderBottomWidth: 1, borderColor: '#eee' }}>
                 <FontAwesome name="shopping-cart" size={24} color="#fff" backgroundColor="#576CBC"
                   style={{
@@ -328,7 +328,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
         <View style={{ backgroundColor: '#fff', marginTop: 20 }}>
         <TouchableOpacity onPress={() => navigation.navigate('Acil')} >
           
-            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 17, borderBottomWidth: 1, borderColor: '#eee' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 12, borderBottomWidth: 1, borderColor: '#eee' }}>
               <AntDesign name="exclamation" size={24} color="#fff" backgroundColor="#888"
                 style={{
                   padding: 6,
@@ -347,7 +347,7 @@ const Home: React.FunctionComponent<SearchBarComponentProps> = () => {
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, paddingTop: 17 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', padding: 12, }}>
               <FontAwesome6 name="clock" size={24} color="#fff" backgroundColor="#888"
                 style={{
                   padding: 6,

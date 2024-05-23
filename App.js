@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { View, Text, I18nManager, StatusBar, TouchableOpacity,ImageBackground  } from 'react-native'
+import { View, Text, I18nManager, StatusBar, TouchableOpacity,ImageBackground,ScrollView  } from 'react-native'
 import {
   SimpleLineIcons,
   MaterialIcons,
@@ -32,23 +32,39 @@ import Acil from "./screens/Acil";
 import User from "./screens/User";
 import Ilan from "./screens/Ilan";
 import Servislar from "./screens/Servislar";
+import Alisverish from "./screens/Akisveris";
+import Tum from "./screens/Alisveris/Tum";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const HomeStack = () => {
   return (
+    <>
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Stack.Screen name="Acil" component={Acil} options={{ headerShown: false }} />
     </Stack.Navigator>
+    
+    </>
   );
 };
+
+const AkisverisStack = () => {
+  return (
+  <Stack.Navigator initialRouteName="Alisverish">
+    <Stack.Screen name="Alisverish" component={Alisverish} options={{ headerShown: false }} />
+    <Stack.Screen name="Tum" component={Tum} options={{ headerShown: false }} />
+  </Stack.Navigator>
+  );
+}
 
 const DrawerNavigator = () => {
   const navigation = useNavigation();
 
   return (
+    
+      
     <Drawer.Navigator
       drawerContent={
         (props) => {
@@ -70,7 +86,7 @@ const DrawerNavigator = () => {
       screenOptions={{
         drawerStyle: {
           backgroundColor: "#fff",
-          width: 300,
+          width: 350,
 
         },
         headerStyle: {
@@ -82,7 +98,7 @@ const DrawerNavigator = () => {
         headerTintColor: '#fff',
         drawerActiveTintColor: "black",
         drawerItemStyle: {
-          marginBottom: -5,
+          marginBottom: -12,
           marginLeft: 0,
           borderBottomWidth: 1,
           borderBottomColor: '#ccc'
@@ -102,11 +118,7 @@ const DrawerNavigator = () => {
           drawerBackgroundColor: '#00bfff',
           drawerIcon: () => (
             <MaterialCommunityIcons name="home" size={24} color={'#fff'} style={{
-              padding: 5,
-              borderBottomLeftRadius: 20,
-              borderTopLeftRadius: 20,
-              borderBottomRightRadius: 20,
-              borderTopRightRadius: 20
+              padding: 4,
             }} />
           ),
           sceneContainerStyle: {
@@ -143,11 +155,7 @@ const DrawerNavigator = () => {
           drawerIcon: () => (
             <FontAwesome name="user" size={24} color="#fff"
               style={{
-                padding: 5,
-                borderBottomLeftRadius: 20,
-                borderTopLeftRadius: 20,
-                borderBottomRightRadius: 20,
-                borderTopRightRadius: 20
+                padding: 4
               }} />
           ),
           drawerItemStyle: {
@@ -171,11 +179,7 @@ const DrawerNavigator = () => {
           drawerIcon: () => (
             <FontAwesome name="home" size={24} color="#fff"
               style={{
-                padding: 5,
-                borderBottomLeftRadius: 20,
-                borderTopLeftRadius: 20,
-                borderBottomRightRadius: 20,
-                borderTopRightRadius: 20
+                padding: 4
               }} />
           ),
           drawerItemStyle: {
@@ -197,11 +201,7 @@ const DrawerNavigator = () => {
           drawerIcon: () => (
             <FontAwesome name="home" size={24} color="#fff"
               style={{
-                padding: 5,
-                borderBottomLeftRadius: 20,
-                borderTopLeftRadius: 20,
-                borderBottomRightRadius: 20,
-                borderTopRightRadius: 20
+                padding: 4
               }} />
 
           ),
@@ -226,7 +226,7 @@ const DrawerNavigator = () => {
           drawerIcon: () => (
             <FontAwesome name="home" size={24} color="#fff" backgroundColor='#DD761C'
               style={{
-                padding: 6,
+                padding: 4,
                 borderBottomLeftRadius: 20,
                 borderTopLeftRadius: 20,
                 borderBottomRightRadius: 20,
@@ -287,7 +287,7 @@ const DrawerNavigator = () => {
         component={Yedek}
       />
       <Drawer.Screen
-        name="customize"
+        name="Alisverish"
         options={{
           drawerLabel: () => (
             <View style={{ flexDirection: 'column', position: 'relative', left: -20 }}>
@@ -296,7 +296,7 @@ const DrawerNavigator = () => {
             </View>
           ),
           drawerLabelStyle: { position: 'relative', left: -20 },
-          title: "customize",
+          title: "ikinci El ve Sifir Alisveris",
           drawerIcon: () => (
             <FontAwesome name="shopping-cart" size={24} color="#fff" backgroundColor="#576CBC"
               style={{
@@ -308,7 +308,7 @@ const DrawerNavigator = () => {
               }} />
           ),
         }}
-        component={Customize}
+        component={AkisverisStack}
       />
       <Drawer.Screen
         name="settings"
@@ -458,6 +458,7 @@ const DrawerNavigator = () => {
         component={Hayvanlar}
       />
     </Drawer.Navigator>
+    
   );
 };
 
